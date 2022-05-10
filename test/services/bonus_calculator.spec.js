@@ -1,7 +1,7 @@
-import Invoice from "@/entities/invoice";
-import BonusCalculator from "@/services/bonus_calculator";
-import Client from "@/entities/client";
-import Plan from "@/entities/plan";
+const Invoice = require("../../src/entities/invoice")
+const Client = require("../../src/entities/client")
+const Plan = require("../../src/entities/plan")
+const BonusCalculator = require("../../src/services/bonus_calculator")
 
 describe('Calculating user bonus', () => {
     const invoiceAmount1 = 1002
@@ -13,7 +13,7 @@ describe('Calculating user bonus', () => {
     const amountBonusGold = totalAmountOfInvoices * 0.1
     const amountBonusPlatinum = totalAmountOfInvoices * 0.05
 
-    const invoices: Invoice[] = [
+    const invoices = [
         new Invoice(
             new Date(2018, 1),
             invoiceAmount1
